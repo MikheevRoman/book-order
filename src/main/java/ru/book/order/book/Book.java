@@ -16,7 +16,7 @@ import java.util.UUID;
  * <p></p>
  * Comment: аннотации @Getter и после нее можно заменить @Data в конкретном ТЗ,
  * но если у энтити появятся вложенные сущности, то это приведет
- * к дальнейшим проблемам при вызовах equals(), hash() и toString()
+ * к дальнейшим проблемам при вызовах equals(), hashCode() и toString()
  */
 @Entity
 @Table(name = "books")

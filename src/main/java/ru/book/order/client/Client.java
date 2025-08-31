@@ -20,7 +20,12 @@ import java.util.UUID;
  * к дальнейшим проблемам при вызовах equals(), hash() и toString()
  */
 @Entity
-@Table(name = "templates/clients")
+@Table(
+        name = "templates/clients",
+        indexes = {
+                @Index(name = "idx_clients_full_name", columnList = "fullName")
+        }
+)
 @Getter
 @Setter
 @EqualsAndHashCode

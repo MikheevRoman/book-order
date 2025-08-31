@@ -18,7 +18,14 @@ import java.util.UUID;
  * к дальнейшим проблемам при вызовах equals(), hashCode() и toString()
  */
 @Entity
-@Table(name = "templates/books")
+@Table(
+        name = "templates/books",
+        indexes = {
+                @Index(name = "idx_books_isbn", columnList = "isbn", unique = true),
+                @Index(name = "idx_books_name", columnList = "name"),
+                @Index(name = "idx_books_author", columnList = "author")
+        }
+)
 @Getter
 @Setter
 @EqualsAndHashCode

@@ -1,30 +1,31 @@
-package ru.book.order.book;
+package ru.book.order.client;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.time.LocalDate;
 import java.util.UUID;
 
 /**
- * Book entity class
+ * Client entity class
  * <p></p>
  * Comment: аннотации @Getter и после нее можно заменить @Data в конкретном ТЗ,
  * но если у энтити появятся вложенные сущности, то это приведет
  * к дальнейшим проблемам при вызовах equals(), hash() и toString()
  */
 @Entity
-@Table(name = "books")
+@Table(name = "clients")
 @Getter
 @Setter
 @EqualsAndHashCode
 @ToString
-public class Book {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -34,19 +35,13 @@ public class Book {
     @Column(nullable = false)
     @NotBlank
     @Size(max = 255)
-    private String name;
-
-    @Column(nullable = false)
-    @NotBlank
-    @Size(max = 255)
-    private String author;
+    private String fullName;
 
     /*
-     * Здесь может быть пользовательская валидация на соответствие идентификатору isbn
+     * Здесь может быть пользовательская валидация (например, автору больше 18 лет)
      */
     @Column(nullable = false)
-    @NotBlank
-    @Size(max = 32)
-    private String isbn;
+    @Past
+    private LocalDate dateOfBirth;
 
 }

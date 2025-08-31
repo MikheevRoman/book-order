@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Order a book</title>
+</head>
+<body>
+<h1>Order a book</h1>
+
+<form th:action="@{/orders}" th:object="${order}" method="post">
+
+  <label>Book:</label>
+  <select th:field="*{book}">
+    <option th:each="book : ${books}"
+            th:value="${book.id}"
+    th:text="${book.name}"></option>
+  </select>
+
+  <label>Client:</label>
+  <select th:field="*{client}">
+    <option th:each="client : ${clients}"
+            th:value="${client.id}"
+    th:text="${client.fullName}"></option>
+  </select>
+
+  <button type="submit">Save</button>
+</form>
+
+
+<a th:href="@{/orders}">Back to list</a>
+</body>
+</html>

@@ -1,7 +1,9 @@
-package ru.book.order.client;
+package ru.book.order.client.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.book.order.client.Client;
+import ru.book.order.client.ClientRepository;
 
 import java.util.List;
 import java.util.UUID;

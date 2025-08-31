@@ -2,6 +2,7 @@ package ru.book.order.client;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import ru.book.order.client.service.ClientServiceImpl;
 
 import java.util.Arrays;
 import java.util.List;

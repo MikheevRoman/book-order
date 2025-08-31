@@ -1,7 +1,6 @@
 package ru.book.order.book;
 
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.EqualsAndHashCode;
@@ -19,7 +18,7 @@ import java.util.UUID;
  * к дальнейшим проблемам при вызовах equals(), hashCode() и toString()
  */
 @Entity
-@Table(name = "books")
+@Table(name = "templates/books")
 @Getter
 @Setter
 @EqualsAndHashCode

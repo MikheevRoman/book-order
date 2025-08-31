@@ -20,7 +20,7 @@ import java.util.UUID;
  * к дальнейшим проблемам при вызовах equals(), hash() и toString()
  */
 @Entity
-@Table(name = "clients")
+@Table(name = "templates/clients")
 @Getter
 @Setter
 @EqualsAndHashCode

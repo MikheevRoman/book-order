@@ -12,7 +12,7 @@ import ru.book.order.order.service.OrderService;
 @Controller
 @RequestMapping("/orders")
 @RequiredArgsConstructor
-public class OrderController {
+public class OrderMvcController {
 
     private final OrderService orderService;
     private final ClientService clientService;
